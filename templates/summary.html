@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Summary Kharche</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+	
+<style type="text/css">
+      
+    th:tr{
+        color: rgb(0, 0, 0);
+  
+    }
+    tr:nth-of-type(2n){
+        border: 1px solid black;
+        /* background-color: rgba(255, 0, 0, 0.5); */
+  
+    }
+  
+    td{
+        padding: 8px 8px;
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+<center>
+	<h1>{{month}}</h1>
+<table style="margin-left: 20px;">
+<!-- Table headers -->
+	<th style="color: yellow;">
+		<tr>	
+		<td>Type</td>
+		<td>Expense</td>
+</tr>
+	</th>
+	
+<!-- For loop logic of jinja template -->
+{%for key in result%}
+
+<!-- table rows -->
+<tr>
+	<td>{{key}}</td>
+	<td>{{result[key]}}</td>
+
+{%endfor%}
+
+</tr>
+
+</table>
+    <a href="/hisaab"><button>Go back</button></a>
+
+	<h3>Pie Chart analysis - </h3>	
+<img src="data:image/png;base64,{{image.image}}" alt="Pie Chart">
+	</center>
+</body>
+</html>
+{% endblock %}

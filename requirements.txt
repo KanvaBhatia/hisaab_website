@@ -1,0 +1,12 @@
+flask
+flask-sqlalchemy
+flask-login
+werkzeug
+pandas
+requests
+gunicorn
+pygsheets
+matplotlib
+numpy
+psycopg2-binary
+sqlalchemy
