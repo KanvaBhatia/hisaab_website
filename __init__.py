@@ -13,7 +13,7 @@ db = SQLAlchemy()
 def create_app():
     app = Flask(__name__) # creates the Flask instance, __name__ is the name of the current Python module
     app.config['SECRET_KEY'] = 'ooooo' # it is used by Flask and extensions to keep data safe
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://vercel:CHP674haPpvMHmSbIJ-6EA@starry-wizard-7062.7tt.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full' #it is the path where the SQLite database file will be saved
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///expenses.db' #it is the path where the SQLite database file will be saved
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False # deactivate Flask-SQLAlchemy track modifications
     db.init_app(app) # Initialiaze sqlite database
     # The login manager contains the code that lets your application and Flask-Login work together
